@@ -31,4 +31,6 @@ Once you have the MARCs on your machine, the `match-transcriptions.py` script wi
 
 The `transcription-index.csv` file contains URLs for Internet Archive items that I believe I may have a transcription of. To check manually if they do match, you can go to the URL, and then compare what you find there to the corresponding file found in the `transcriptions/` directory.
 
+For example, you can check to see if [this transcription](https://github.com/wcaleb/abolitionist-letters/blob/master/transcriptions/Ms.A.9.2.23.75) matches [this original manuscript](https://archive.org/details/lettertodearfrie00alle). (See page two of the manuscript for the excerpt I transcribed.)
+
 Please [contact me](http://wcm1.web.rice.edu) or file an issue if you have any problems or questions.

@@ -13,7 +13,7 @@ base_path = '/Users/wcm1/programming/abolitionist-letters/'
 path_to_marcs = base_path + 'marc/'
 path_to_transcripts = base_path + 'transcriptions/'
 
-csv_file = open(base_path + 'matches.csv', 'wb')
+csv_file = open(base_path + 'transcription-index.csv', 'wb')
 csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
 
 matches = 0

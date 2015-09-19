@@ -15,6 +15,7 @@ path_to_transcripts = base_path + 'transcriptions/'
 
 csv_file = open(base_path + 'transcription-index.csv', 'wb')
 csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+csv_writer.writerow(['Call Number', 'URL', 'Author (?)', 'Recipient (?)'])
 
 matches = 0
 doubles = 0
@@ -29,24 +30,26 @@ def make_url(marcfile):
 def get_call_no(record):
     global tempcall
     try:
-       tempcall = strip_call_no(str(record['099']['a']))
+        tempcall = strip_call_no(str(record['099']['a']))
     except Exception as e:
-       return e
+        return e
 
 def check_call_no(record):
     global matches
     global doubles
     try: 
-       callno = strip_call_no(str(record['099']['a']))
-       if callno in s:
-          doubles += 1
-       elif callno in l:
-          matches += 1
-          csv_writer.writerow([d[callno], make_url(fd[callno])])
-       else:
-	      pass
+        callno = strip_call_no(str(record['099']['a']))
+        if callno in s:
+           doubles += 1
+        elif callno in l:
+           matches += 1
+           author = str(record['100']['a'])
+           recip = str(record['700']['a'])
+           csv_writer.writerow([d[callno], make_url(fd[callno]), author, recip])
+        else:
+           pass
     except Exception as e:
-       print e
+        print e
 
 # List of transcript filenames with everything but digits stripped from names
 l = [strip_call_no(f) for f in os.listdir(path_to_transcripts) if f.startswith('Ms')]

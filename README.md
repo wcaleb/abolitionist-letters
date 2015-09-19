@@ -29,7 +29,7 @@ If you want to download, to your own machine, the MARC records for all of the le
 
 Once you have the MARCs on your machine, the `match-transcriptions.py` script will attempt to match up XML records with my partial transcriptions, included in the `transcriptions/` directory. The filenames of my transcriptions correspond to the call numbers of the items at the BPL, which are also included (in a slightly different format) in the MARC XML records. So the script attempts to perform some rough matching on the call numbers, but it's a work in progress and I'd welcome help from those who might have better suggestions about how to check for matches.
 
-The `transcription-index.csv` file contains URLs for Internet Archive items that I believe I may have a transcription of. To check manually if they do match, you can go to the URL, and then compare what you find there to the corresponding file found in the `transcriptions/` directory.
+The `transcription-index.csv` file contains URLs for Internet Archive items that I believe I may have a transcription of. Each row also contains the (possible) author and recipient of the letter, scraped from the MARC XML record associated with the potentially matching Internet Archive item. To check manually if they do match, you can go to the URL, and then compare what you find there to the corresponding file found in the `transcriptions/` directory.
 
 For example, you can check to see if [this transcription](https://github.com/wcaleb/abolitionist-letters/blob/master/transcriptions/Ms.A.9.2.23.75) matches [this original manuscript](https://archive.org/details/lettertodearfrie00alle). (See page two of the manuscript for the excerpt I transcribed.)
 

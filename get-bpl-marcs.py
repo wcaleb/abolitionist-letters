@@ -25,6 +25,6 @@ for result in search:
         try:
             marc.download(marcs_dir + itemid + '_marc.xml')
         except Exception as e:
-		    error_log.write('Could not download ' + itemid + ': %s\n' % e)
+            error_log.write('Could not download ' + itemid + ': %s\n' % e)
         else:
             print "Downloading " + itemid + " ..."
